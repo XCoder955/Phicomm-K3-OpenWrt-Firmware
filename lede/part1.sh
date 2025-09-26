@@ -24,6 +24,12 @@ rm -rf package/lean/luci-app-passwall
 git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall package/lean/luci-app-passwall 
 echo '=========Add passwall source OK!========='
 
+
+echo '添加iStore依赖feeds'
+sed -i '$a src-git istore https://github.com/linkease/istore.git;main' feeds.conf.default
+echo '=========Add iStore feeds source OK!========='
+
+
 echo '添加jerrykuku的argon-mod主题'
 rm -rf package/lean/luci-theme-argon  
 git clone -b 18.06 --single-branch https://github.com/jerrykuku/luci-theme-argon package/lean/luci-theme-argon
